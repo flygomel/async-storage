@@ -43,7 +43,6 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         if (project == rootProject) {
             classpath 'com.android.tools.build:gradle:3.6.4'
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$asyncStorageKtVersion"
@@ -65,7 +64,7 @@ if (newDbSize != null && newDbSize.isLong()) {
 def useDedicatedExecutor = getFlagOrDefault('AsyncStorage_dedicatedExecutor', true)
 
 // Use next storage implementation
-def useNextStorage = getFlagOrDefault("AsyncStorage_useNextStorage", true)
+def useNextStorage = getFlagOrDefault("AsyncStorage_useNextStorage", false)
 
 apply plugin: 'com.android.library'
 if (useNextStorage) {
